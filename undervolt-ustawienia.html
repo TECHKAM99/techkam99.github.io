@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Undervolt – kiedy warto i dlaczego? | TECHKAM99</title>
+<style>
+  body { font-family: 'Fira Code', monospace; background: #121212; color: #e0e0e0; padding: 2rem; }
+  nav.lang-switch { margin-bottom: 1rem; }
+  nav.lang-switch button {
+    background: #222;
+    color: #90caf9;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    margin-right: 0.3rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 4px;
+  }
+  nav.lang-switch button.active {
+    background: #90caf9;
+    color: #121212;
+  }
+  section.lang-block { display: none; }
+  section.lang-block.active { display: block; }
+  h1 { margin-top: 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>TECHKAM99 - Undervolt – kiedy warto i dlaczego?</h1>
+</header>
+
+<nav class="lang-switch" aria-label="Wybierz język">
+  <button id="pl-btn" class="active" aria-pressed="true">🇵🇱 Polski</button>
+  <button id="en-btn" aria-pressed="false">🇬🇧 English</button>
+  <button id="de-btn" aria-pressed="false">🇩🇪 Deutsch</button>
+</nav>
+
+<main>
+  <section id="pl" class="lang-block active" lang="pl">
+    <h2>Undervolt – kiedy warto go robić?</h2>
+    <p>Undervolt to obniżenie napięcia karty graficznej, co pozwala zmniejszyć temperaturę i zużycie energii bez utraty wydajności. Jest to szczególnie ważne, gdy temperatury hotspotu przekraczają 90 stopni Celsjusza.</p>
+    <p>Na przykład dla karty MSI RX 6700 XT 2X Mech OC undervolting to wręcz przymus, żeby nie gotować na niej wody do parówek. Bez tego karta może się nadmiernie grzać i skracać żywotność.</p>
+    <p>Dlatego warto monitorować temperatury i dopiero po przekroczeniu granicy 90°C zacząć eksperymentować z undervoltem.</p>
+  </section>
+
+  <section id="en" class="lang-block" lang="en">
+    <h2>Undervolt – when is it worth doing?</h2>
+    <p>Undervolting lowers the GPU voltage, reducing temperature and power consumption without losing performance. It’s especially important when hotspot temperatures exceed 90°C.</p>
+    <p>For example, with the MSI RX 6700 XT 2X Mech OC, undervolting is practically a must to avoid "boiling water" on the card. Without it, the GPU can overheat and shorten its lifespan.</p>
+    <p>Therefore, monitor temperatures and start undervolting only after crossing the 90°C threshold.</p>
+  </section>
+
+  <section id="de" class="lang-block" lang="de">
+    <h2>Undervolt – wann lohnt es sich?</h2>
+    <p>Undervolting senkt die Spannung der Grafikkarte, wodurch Temperatur und Stromverbrauch reduziert werden, ohne die Leistung zu verlieren. Das ist besonders wichtig, wenn die Hotspot-Temperaturen 90°C überschreiten.</p>
+    <p>Zum Beispiel ist beim MSI RX 6700 XT 2X Mech OC Undervolting praktisch ein Muss, um „kochendes Wasser“ auf der Karte zu vermeiden. Ohne Undervolting kann die Karte überhitzen und ihre Lebensdauer verkürzen.</p>
+    <p>Daher sollte man die Temperaturen überwachen und erst nach Überschreiten der 90°C-Grenze mit dem Undervolting beginnen.</p>
+  </section>
+</main>
+
+<script>
+  const buttons = document.querySelectorAll('nav.lang-switch button');
+  const sections = document.querySelectorAll('section.lang-block');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      buttons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      sections.forEach(s => s.classList.remove('active'));
+
+      button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
+      document.getElementById(button.id.replace('-btn', '')).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
