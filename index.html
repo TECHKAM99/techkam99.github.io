@@ -84,6 +84,49 @@
     Kontakt: <a href="mailto:kontakt@techkam99.pl">kontakt@techkam99.pl</a> | 
     Discord: <a href="https://discord.gg/TwojDiscordLink" target="_blank" rel="noopener noreferrer">TECHKAM99#1234</a>
   </footer>
-</body>
-</html>
+<script>
+  const toggleBtn = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  // Wczytaj zapisany motyw
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
+    body.classList.add("light-mode");
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+    const newTheme = body.classList.contains("light-mode") ? "light" : "dark";
+    localStorage.setItem("theme", newTheme);
+  });
+</script>
+</body>body {
+  font-family: 'Fira Code', monospace;
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: 2rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+nav a, footer a {
+  color: #90caf9;
+}
+
+body.light-mode nav a,
+body.light-mode footer a {
+  color: #1a73e8;
+}
+
+
+</html><span class="lang-toggle">
+  <a href="#">🇵🇱</a>
+  <a href="#">🇬🇧</a>
+  <a href="#">🇩🇪</a>
+  <button id="theme-toggle" style="margin-left:1rem;">🌓</button>
+</span>
 
