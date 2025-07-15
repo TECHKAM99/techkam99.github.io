@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TECHKAM99 - Wpis z tłumaczeniem</title>
+<style>
+  body { font-family: 'Fira Code', monospace; background: #121212; color: #e0e0e0; padding: 2rem; }
+  nav.lang-switch { margin-bottom: 1rem; }
+  nav.lang-switch button {
+    background: #222;
+    color: #90caf9;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    margin-right: 0.3rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 4px;
+  }
+  nav.lang-switch button.active {
+    background: #90caf9;
+    color: #121212;
+  }
+  section.lang-block { display: none; }
+  section.lang-block.active { display: block; }
+  h1 { margin-top: 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>TECHKAM99 - Optymalizacja PC i gier</h1>
+</header>
+
+<nav class="lang-switch" aria-label="Wybierz język">
+  <button id="pl-btn" class="active" aria-pressed="true">🇵🇱 Polski</button>
+  <button id="en-btn" aria-pressed="false">🇬🇧 English</button>
+  <button id="de-btn" aria-pressed="false">🇩🇪 Deutsch</button>
+</nav>
+
+<main>
+  <section id="pl" class="lang-block active" lang="pl">
+    <h2>Undervolt RX 6700 XT – jak i dlaczego?</h2>
+    <p>Undervolt to obniżenie napięcia na karcie graficznej, co pomaga zmniejszyć temperatury i zużycie energii bez utraty wydajności.</p>
+    <p>W tym wpisie pokażę, jak to zrobić krok po kroku, i na co zwrócić uwagę.</p>
+  </section>
+
+  <section id="en" class="lang-block" lang="en">
+    <h2>Undervolt RX 6700 XT – how and why?</h2>
+    <p>Undervolting lowers the voltage of your GPU, reducing temperatures and power consumption without sacrificing performance.</p>
+    <p>This post will guide you step-by-step and highlight important considerations.</p>
+  </section>
+
+  <section id="de" class="lang-block" lang="de">
+    <h2>Undervolt RX 6700 XT – wie und warum?</h2>
+    <p>Undervolting senkt die Spannung deiner Grafikkarte, was die Temperaturen und den Energieverbrauch reduziert, ohne die Leistung zu beeinträchtigen.</p>
+    <p>In diesem Beitrag zeige ich dir Schritt für Schritt, wie das geht und worauf du achten solltest.</p>
+  </section>
+</main>
+
+<script>
+  const buttons = document.querySelectorAll('nav.lang-switch button');
+  const sections = document.querySelectorAll('section.lang-block');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Zdeaktywuj wszystkie przyciski i sekcje
+      buttons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      sections.forEach(s => s.classList.remove('active'));
+
+      // Aktywuj kliknięty przycisk i odpowiadającą sekcję
+      button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
+      document.getElementById(button.id.replace('-btn', '')).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
