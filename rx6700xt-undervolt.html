@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RX 6700 XT 2X Mech OC – Undervolting | TECHKAM99</title>
+<style>
+  body { font-family: 'Fira Code', monospace; background: #121212; color: #e0e0e0; padding: 2rem; }
+  nav.lang-switch { margin-bottom: 1rem; }
+  nav.lang-switch button {
+    background: #222;
+    color: #90caf9;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    margin-right: 0.3rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 4px;
+  }
+  nav.lang-switch button.active {
+    background: #90caf9;
+    color: #121212;
+  }
+  section.lang-block { display: none; }
+  section.lang-block.active { display: block; }
+  h1 { margin-top: 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>TECHKAM99 - RX 6700 XT 2X Mech OC – Undervolting</h1>
+</header>
+
+<nav class="lang-switch" aria-label="Wybierz język">
+  <button id="pl-btn" class="active" aria-pressed="true">🇵🇱 Polski</button>
+  <button id="en-btn" aria-pressed="false">🇬🇧 English</button>
+  <button id="de-btn" aria-pressed="false">🇩🇪 Deutsch</button>
+</nav>
+
+<main>
+  <section id="pl" class="lang-block active" lang="pl">
+    <h2>RX 6700 XT 2X Mech OC – undervolting, którego potrzebujesz</h2>
+    <p>Najlepsze ustawienia działające na każdym sterowniku (przynajmniej u mnie) to:</p>
+    <ul>
+      <li>Maksymalna częstotliwość taktowania: <strong>2500 MHz</strong></li>
+      <li>Napięcie: <strong>1160 mV</strong></li>
+    </ul>
+    <p>To ustawienie pozwala utrzymać temperatury pod kontrolą — maksymalnie około <strong>85°C</strong> hotspot, bez spadku wydajności.</p>
+    <p>Temperatura 85°C utrzymuje się przy obciążeniu około 99%.</p>
+  </section>
+
+  <section id="en" class="lang-block" lang="en">
+    <h2>RX 6700 XT 2X Mech OC – undervolting you need</h2>
+    <p>The best settings working on every driver (at least for me) are:</p>
+    <ul>
+      <li>Maximum clock frequency: <strong>2500 MHz</strong></li>
+      <li>Voltage: <strong>1160 mV</strong></li>
+    </ul>
+    <p>This setup allows you to keep temperatures under control — max around <strong>85°C</strong> hotspot, without performance loss.</p>
+    <p>The 85°C temperature holds under roughly 99% load.</p>
+  </section>
+
+  <section id="de" class="lang-block" lang="de">
+    <h2>RX 6700 XT 2X Mech OC – Undervolting, den du brauchst</h2>
+    <p>Die besten Einstellungen, die bei jedem Treiber funktionieren (zumindest bei mir), sind:</p>
+    <ul>
+      <li>Maximale Taktrate: <strong>2500 MHz</strong></li>
+      <li>Spannung: <strong>1160 mV</strong></li>
+    </ul>
+    <p>Diese Einstellung hält die Temperaturen unter Kontrolle – maximal ca. <strong>85°C</strong> Hotspot, ohne Leistungsverlust.</p>
+    <p>Die Temperatur von 85°C bleibt bei etwa 99% Auslastung konstant.</p>
+  </section>
+</main>
+
+<script>
+  const buttons = document.querySelectorAll('nav.lang-switch button');
+  const sections = document.querySelectorAll('section.lang-block');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      buttons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      sections.forEach(s => s.classList.remove('active'));
+
+      button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
+      document.getElementById(button.id.replace('-btn', '')).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
